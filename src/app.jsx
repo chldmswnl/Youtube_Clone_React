@@ -10,26 +10,32 @@ function App({ youtube }) {
 
   const getVideo = (video) => {
     setVideo(video);
-    console.log(video);
   };
   const search = (query) => {
     youtube.search(query).then((videos) => setVideos(videos));
   };
   useEffect(() => {
+    console.log(video);
     youtube.mostPopular().then((videos) => setVideos(videos));
   }, []);
 
   return (
     <div className={styles.app}>
       <Header onSearch={search} />
-      {video ? (
-        <div className={styles.page}>
-          <VideoPage video={video} />
-          <VideoList videos={videos} getVideo={getVideo} />
+      <section className={styles.content}>
+        {video && (
+          <div className={styles.detail}>
+            <VideoPage video={video} />
+          </div>
+        )}
+        <div className={styles.list}>
+          <VideoList
+            videos={videos}
+            getVideo={getVideo}
+            display={video ? "list" : "grid"}
+          />
         </div>
-      ) : (
-        <VideoList videos={videos} getVideo={getVideo} />
-      )}
+      </section>
     </div>
   );
 }

@@ -1,22 +1,24 @@
 import React from "react";
 import styles from "./video_item.module.css";
 
-function VideoItem(props) {
-  const getVideo = () => {
-    props.getVideo(props.video);
+function VideoItem({ video, video: { snippet }, getVideo, display }) {
+  const searchVideo = () => {
+    getVideo(video);
   };
 
+  const displayType = display === "list" ? styles.list : styles.grid;
+
   return (
-    <li className={styles.container} onClick={getVideo}>
+    <li className={`${styles.container} ${displayType}`} onClick={searchVideo}>
       <div className={styles.video}>
         <img
           className={styles.thumbnail}
-          src={props.video.snippet.thumbnails.medium.url}
+          src={snippet.thumbnails.medium.url}
           alt="video thumbnail"
         />
         <div className={styles.metadata}>
-          <p className={styles.title}>{props.video.snippet.title}</p>
-          <p className={styles.channel}>{props.video.snippet.channelTitle}</p>
+          <p className={styles.title}>{snippet.title}</p>
+          <p className={styles.channel}>{snippet.channelTitle}</p>
         </div>
       </div>
     </li>
