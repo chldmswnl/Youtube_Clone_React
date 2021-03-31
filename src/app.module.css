@@ -1,3 +1,7 @@
 .app {
   max-width: 60rem;
 }
+
+.page {
+  display: flex;
+}
