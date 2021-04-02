@@ -7,7 +7,7 @@ const VideoPage = ({ video, video: { snippet } }) => (
       className={styles.video}
       type="text/html"
       width="100%"
-      height="500px"
+      height="400px"
       src={`https://www.youtube.com/embed/${video.id}`}
       frameborder="0"
       allowfullscreen

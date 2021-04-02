@@ -12,7 +12,10 @@ function App({ youtube }) {
     setVideo(video);
   };
   const search = (query) => {
-    youtube.search(query).then((videos) => setVideos(videos));
+    youtube.search(query).then((videos) => {
+      setVideos(videos);
+      setVideo(null);
+    });
   };
   useEffect(() => {
     console.log(video);
