@@ -5,3 +5,33 @@
 .description {
   white-space: pre-wrap;
 }
+
+.videoInfo {
+  margin: 0 1em;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.published {
+  font-size: 1rem;
+  color: grey;
+}
+
+.channel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.channelTitle {
+  font-weight: bold;
+}
+
+.subscribeBtn {
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #c4302b;
+  color: white;
+}

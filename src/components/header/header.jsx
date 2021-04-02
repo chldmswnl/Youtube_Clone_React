@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef } from "react";
 import styles from "./header.module.css";
 
@@ -18,6 +19,7 @@ const Header = ({ onSearch }) => {
       handleSearch();
     }
   };
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -38,4 +40,4 @@ const Header = ({ onSearch }) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

@@ -25,4 +25,4 @@ function VideoItem({ video, video: { snippet }, getVideo, display }) {
   );
 }
 
-export default VideoItem;
+export default React.memo(VideoItem);
